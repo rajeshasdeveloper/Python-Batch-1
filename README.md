@@ -1,4 +1,4 @@
-# Python-Batch-1
+# Welcome to Python course
 
 ## Workaround
 
