@@ -2,11 +2,16 @@
 
 ## TOPICS:
 
-1. Pyhton Datatypes
+1. Python Datatypes
+
 2. Python Type Conversion
+
 3. Python I/O and import
+
 4. Python Operators
+
 5. Flow control (Conditions, loops, pass, break and continue)
+
 6. Python functions
 
 ** VCS basic usgae (pull, push, merge, working with PRs) **
