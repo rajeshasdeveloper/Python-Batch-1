@@ -14,4 +14,4 @@
 
 6. Python functions
 
-** VCS basic usgae (pull, push, merge, working with PRs) **
+*VCS basic usgae (pull, push, merge, working with PRs)*
