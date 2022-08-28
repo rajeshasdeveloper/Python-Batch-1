@@ -1,9 +1,5 @@
 # Welcome to the Python class 1
 
-1.Core programming
-2.Development
-3.Wrap up
-
 ## TOPICS:
 
 1. What is Python?
