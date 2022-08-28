@@ -10,8 +10,8 @@
 
 4. Python Operators
 
-5. Flow control (Conditions, loops, pass, break and continue)
+<!-- 5. Flow control (Conditions, loops, pass, break and continue)
 
-6. Python functions
+6. Python functions -->
 
 _VCS basic usage (pull, push, merge, working with PRs)_
