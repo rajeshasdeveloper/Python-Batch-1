@@ -14,7 +14,7 @@
 ## Truthify values => 1, ' ', 'a', True, '0'
 ## Flasify values => 0, '', False, None
 
-## set
+# set
 # set_var_a = {1,2,3,4,5}
 # set_var_b = {5,6,7,8}
 # set_var_a.add(10)
@@ -27,6 +27,13 @@
 # print(set_var_a.intersection(set_var_b))
 
 ## frozenset --> immutable
+
+# fset_1 = frozenset({1, 2, 3, 4, 5})
+# fset_2 = frozenset({2, 3, 4, 5, 6})
+# print(fset_1.difference(fset_2))  # A - B
+# print(fset_2.difference(fset_1))  # B - A
+# print(fset_1.union(fset_2))
+# print(fset_1.intersection(fset_2))
 
 ## dict
 
