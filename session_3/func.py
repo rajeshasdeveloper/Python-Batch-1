@@ -3,7 +3,7 @@
 #     return n*(n+1)/2
 
 
-# lst=list(range(1000000000))
+# lst=list(range(100000))
 # sum_res = sum_of_arrays(lst)
 # print(sum_res)
 
