@@ -1,4 +1,4 @@
-str="sreejith"
+str="india"
 str1=''
 j= len(str)-1
 while j>=0:
