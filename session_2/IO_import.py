@@ -2,7 +2,7 @@
 # input_var = list(map(int, input("Enter the input: ").split()))
 # print(input_var)
 
-## import
+# import
 
 # from importable import importable_func
 
