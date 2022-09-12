@@ -1,4 +1,4 @@
-### Practice Qn:
+### Practice Qn: (Solve using OOPS)
 
 1. Missing number in array
 
