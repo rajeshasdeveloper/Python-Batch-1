@@ -1,20 +1,20 @@
-import sqlite3
+import sqlite3, os
 
 
-def db_servie(query):
-    sqliteConnection = sqlite3.connect("sql.db")
-    cursor = sqliteConnection.cursor()
-    cursor.execute(query)
-    sqliteConnection.commit()
-    result = cursor.fetchall()
-    print(result)
-    return result
+def db_servie(query, params=[]):
+    try:
+        sqliteConnection = sqlite3.connect("sql.db")
+        cursor = sqliteConnection.cursor()
+        cursor.execute(query, params)
+        sqliteConnection.commit()
+        result = cursor.lastrowid
+        return result
+    except Exception as err:
+        return str(err)
 
 
-# db_servie(
-#     """
-#     INSERT INTO USERS (USER_ID, USER_NAME) VALUES (2, 'JAVA')
-#     """
-# )
-
-# db_servie("select * from users")
+def validate_database():
+    query_file = os.getcwd() + "/sql/user/tables.sql"
+    with open(query_file, "r") as sql_queries:
+        for query in sql_queries.readlines():
+            db_servie(query)
