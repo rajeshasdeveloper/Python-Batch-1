@@ -1,5 +1,5 @@
-from server.db import db_servie
-import re
+from server.db import db_service
+import re, os, bcrypt
 
 
 def register(user_data):
@@ -19,20 +19,23 @@ def register(user_data):
 
 
 def insert_user_to_db(user):
-    insert_user_query = (
-        "INSERT INTO USERS (EMAIL, USER_NAME, MOBILE, CREDENTIALS) VALUES (?, ?, ?, ?)"
-    )
+    if os.getenv("DB_TYPE") == "mysql":
+        insert_user_query = "INSERT INTO USERS (EMAIL, USER_NAME, MOBILE, CREDENTIALS) VALUES (%s, %s, %s, %s)"
+    else:
+        insert_user_query = "INSERT INTO USERS (EMAIL, USER_NAME, MOBILE, CREDENTIALS) VALUES (?, ?, ?, ?)"
+
     insert_user_data_params = []
     insert_user_data_params.extend(
-        [
-            user["email"],
-            f'{user["first_name"]} {user["last_name"]}',
-            user["mobile"],
-            user["password"],
-        ]
+        [user["email"], f'{user["first_name"]} {user["last_name"]}', user["mobile"]]
     )
-    db_res = db_servie(insert_user_query, insert_user_data_params)
-    return db_res
+    salt = bcrypt.gensalt(10)
+    hashed_password = bcrypt.hashpw(user["password"].encode("utf8"), salt)
+    insert_user_data_params.append(hashed_password)
+    db_res = db_service(insert_user_query, insert_user_data_params)
+    if "error" in db_res:
+        return db_res["error"]
+    else:
+        return db_res.lastrowid
 
 
 def validate_user_data(user):

@@ -1,10 +1,14 @@
-from copyreg import constructor
 from app import app
 from flask import request, make_response, jsonify
 from server.user.register import register
+from server.user.login import login
+from server.user.user_detail import get_user_details
+from flask_jwt_extended import jwt_required
 
 from server.db import validate_database
+import os
 
+os.environ["DB_TYPE"] = "sqlite3"
 validate_database()
 # from templates.home import home
 
@@ -21,7 +25,11 @@ validate_database()
 
 @app.route("/user/login")
 def login_user():
-    pass
+    email = request.get_json()["email"]
+    password = request.get_json()["password"]
+    login_response, status_code = login(email, password)
+    print(login_response)
+    return make_response(login_response, status_code)
 
 
 @app.route("/user/register", methods=["POST"])
@@ -29,3 +37,9 @@ def register_user():
     user_data = request.get_json()
     signup_response, status_code = register(user_data)
     return make_response(signup_response, status_code)
+
+
+@app.route("/user/details")
+@jwt_required()
+def user_details():
+    return get_user_details(request.args.get("email"))
