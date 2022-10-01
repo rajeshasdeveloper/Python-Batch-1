@@ -1,5 +1,5 @@
 # str
-# int, float, complex
+#  int, float, complex 
 # list, tuple, range
 # dict
 # set, frozenset
@@ -82,7 +82,20 @@
 
 ## list (Array)
 
-# lst = []
+list= [3,4,5,6,78]
+list.extend()
+print(list_copy)
+
+
+
+
+
+
+
+
+
+
+
 # print("The lst is", lst)
 # lst.append("A")
 # print("The append 1 in lst is", lst)
