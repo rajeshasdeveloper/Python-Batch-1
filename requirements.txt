@@ -4,3 +4,4 @@ flask_cors
 bcrypt
 gunicorn
 waitress
+uWSGI
