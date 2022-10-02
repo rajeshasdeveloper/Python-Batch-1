@@ -1,8 +1,10 @@
+from operator import methodcaller
 from app import app
 from flask import request, make_response, jsonify
 from server.user.register import register
 from server.user.login import login
 from server.user.user_detail import get_user_details
+from server.user.update_user import update_user_details
 from flask_jwt_extended import jwt_required
 
 from server.db import validate_database
@@ -23,12 +25,12 @@ validate_database()
 #     return make_response(jsonify(result))
 
 
-@app.route("/user/login")
+@app.route("/user/login", methods=["POST"])
 def login_user():
+    print(request.get_json())
     email = request.get_json()["email"]
     password = request.get_json()["password"]
     login_response, status_code = login(email, password)
-    print(login_response)
     return make_response(login_response, status_code)
 
 
@@ -37,6 +39,13 @@ def register_user():
     user_data = request.get_json()
     signup_response, status_code = register(user_data)
     return make_response(signup_response, status_code)
+
+
+@app.route("/user/profile/update", methods=["POST"])
+def update_user_profile():
+    user_data = request.get_json()
+    update_response, status = update_user_details(user_data)
+    return make_response(update_response, status)
 
 
 @app.route("/user/details")

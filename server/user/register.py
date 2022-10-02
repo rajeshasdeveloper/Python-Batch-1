@@ -105,11 +105,11 @@ def validate_password(password):
     return True
 
 
-user = {
-    "email": "abcd@gmail.com",
-    "mobile": "0000000000",
-    "first_name": "Rajesh",
-    "last_name": "K",
-    "password": "rajesh@123",
-    "confirm_password": "rajesh@123",
-}
+# user = {
+#     "email": "abcd@gmail.com",
+#     "mobile": "0000000000",
+#     "first_name": "Rajesh",
+#     "last_name": "K",
+#     "password": "rajesh@123",
+#     "confirm_password": "rajesh@123",
+# }
