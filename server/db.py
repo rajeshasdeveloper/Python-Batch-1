@@ -1,5 +1,4 @@
-import sqlite3, os, mysql.connector
-
+import sqlite3, os
 sqliteConnection = None
 
 
@@ -12,10 +11,7 @@ def connect_to_db(db_type):
         "password": "blueeyes",
         "database": "transactionserv",
     }
-    if db_type == "mysql":
-        connection = mysql.connector.connect(**db_config)
-    else:
-        connection = sqlite3.connect("sql.db")
+    connection = sqlite3.connect("sql.db")
     return connection
 
 
