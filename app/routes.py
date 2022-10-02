@@ -1,4 +1,3 @@
-from operator import methodcaller
 from app import app
 from flask import request, make_response, jsonify
 from server.user.register import register
