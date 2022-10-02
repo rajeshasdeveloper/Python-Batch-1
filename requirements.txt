@@ -3,3 +3,5 @@ flask_jwt_extended
 flask_cors
 bcrypt
 mysql
+gunicorn
+waitress

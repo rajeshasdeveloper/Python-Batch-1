@@ -14,14 +14,10 @@ validate_database()
 # from templates.home import home
 
 
-# @app.route("/", methods=["POST", "GET"])
-# def home_route():
-#     if request.method == "GET":
-#         result = {"message": "Welcome You are in a Flask app"}
-#     else:
-#         result = request.get_json()
-#         result = result or request.args
-#     return make_response(jsonify(result))
+@app.route("/")
+def home_route():
+    result = {"message": "Welcome You are in a Flask app"}
+    return make_response(jsonify(result))
 
 
 @app.route("/user/login", methods=["POST"])
