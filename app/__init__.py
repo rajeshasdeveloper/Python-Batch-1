@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_jwt_extended import JWTManager
 from datetime import timedelta
-from flask_cors import CORS, cross_origin
+from flask_cors import CORS
 
 ACCESS_EXPIRES = timedelta(minutes=20)
 
