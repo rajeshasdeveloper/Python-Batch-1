@@ -22,9 +22,9 @@ def home_route():
 
 @app.route("/user/login", methods=["POST"])
 def login_user():
-    print(request.get_json())
-    email = request.get_json()["email"]
-    password = request.get_json()["password"]
+    user_data = request.get_json()
+    email = user_data["email"]
+    password = user_data["password"]
     login_response, status_code = login(email, password)
     return make_response(login_response, status_code)
 
@@ -44,6 +44,6 @@ def update_user_profile():
 
 
 @app.route("/user/details")
-@jwt_required()
+# @jwt_required()
 def user_details():
     return get_user_details(request.args.get("email"))

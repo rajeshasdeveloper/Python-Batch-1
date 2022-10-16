@@ -61,7 +61,7 @@ def validate_user_data(user):
     if not validate_name(user["last_name"]):
         return f'The lastname {user["last_name"]} is invalid'
     if validate_name(user["first_name"]) and validate_name(user["last_name"]):
-        if not (
+        if (
             (len(user["first_name"]) <= 2 and len(user["last_name"]) >= 2)
             or (len(user["last_name"]) <= 2 and len(user["first_name"]) >= 2)
         ):
