@@ -1,0 +1,16 @@
+h1 {
+  font-size: 56px;
+}
+
+h1:hover {
+  transition: 0.5s;
+  color: black;
+}
+
+#header {
+  margin: 5% 0 10% 0;
+}
+
+span > a > button {
+  margin: 2%;
+}

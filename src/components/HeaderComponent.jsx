@@ -1,26 +1,40 @@
 import { Layout, Menu } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/antd_header.css";
+
 const { Header } = Layout;
-const HeaderComponent = () => (
-  <Layout className="layout">
-    <Link to="/">
+const HeaderComponent = () => {
+  const navigationArray = [
+    { label: "Payment App", route: "/" },
+    {
+      label: "login",
+      route: "/login",
+    },
+    {
+      label: "register",
+      route: "/register",
+    },
+  ];
+
+  return (
+    <Layout className="layout">
       <Header>
         <div className="logo" />
         <Menu
-          theme="dark"
+          theme="light"
           mode="horizontal"
           defaultSelectedKeys={["2"]}
-          items={new Array(1).fill(null).map((_, index) => {
+          items={navigationArray.map((object, index) => {
             const key = index + 1;
             return {
               key,
-              label: `Payment App`,
+              label: <Link to={object.route}>{object.label}</Link>,
             };
           })}
         />
       </Header>
-    </Link>
-  </Layout>
-);
+    </Layout>
+  );
+};
 export default HeaderComponent;

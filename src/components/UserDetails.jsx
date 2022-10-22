@@ -7,7 +7,6 @@ const UserDetails = () => {
   useEffect(() => {
     (async () => {
       const users = await fetchUserDetails();
-
       setUserData(users);
     })();
   }, []);
