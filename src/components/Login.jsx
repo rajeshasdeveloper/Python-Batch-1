@@ -4,7 +4,9 @@ import { Link } from "react-router-dom";
 import { loginUser } from "../apis/userLogin";
 import Success from "./Success";
 
-const Login = () => {
+const Login = (props) => {
+  console.log(props);
+  const { callParent } = props;
   const [color, setColor] = useState("green");
   const [loginData, setloginData] = useState("");
   const onFinish = async (values) => {
@@ -16,6 +18,9 @@ const Login = () => {
     setloginData(response.message || response.error);
     if ("error" in response) {
       setColor("red");
+      callParent({ status: "Authentication Failed" });
+    } else {
+      callParent({ status: "Authentication success" });
     }
   };
   const onFinishFailed = (errorInfo) => {

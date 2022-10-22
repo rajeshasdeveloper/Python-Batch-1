@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { createContext } from "react";
+import React, { createContext, useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Register from "./components/Register";
@@ -15,10 +15,15 @@ import ReducerComponent from "./components/ReducerComponent";
 export const TitleContext = createContext();
 
 function App() {
+  const [childProp, setChildProp] = useState("");
+  const callParent = (props) => {
+    setChildProp(props.status);
+  };
   return (
     <div className="App">
       <Router>
         <HeaderComponent />
+        <h1>{childProp}</h1>
         <Routes>
           <Route
             path="/"
@@ -29,7 +34,7 @@ function App() {
             }
           />
 
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login callParent={callParent} />} />
           <Route path="/register" element={<Register />} />
           <Route path="/users" element={<UserDetails />} />
           <Route path="/ref" element={<RefComponent />} />
