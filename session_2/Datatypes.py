@@ -14,17 +14,17 @@
 ## Truthify values => 1, ' ', 'a', True, '0'
 ## Flasify values => 0, '', False, None
 
-# set
-# set_var_a = {1,2,3,4,5}
-# set_var_b = {5,6,7,8}
-# set_var_a.add(10)
-# set_var_a.remove(10)
-# set_var_a.pop()
-# print(set_var_a)
-# print(set_var_a.difference(set_var_b)) # A - B
-# print(set_var_b.difference(set_var_a)) # B - A
-# print(set_var_a.union(set_var_b))
-# print(set_var_a.intersection(set_var_b))
+set
+set_var_a = {1,2,3,4,5}
+set_var_b = {5,6,7,8}
+set_var_a.add(10)
+set_var_a.remove(10)
+set_var_a.pop()
+print(set_var_a)
+print(set_var_a.difference(set_var_b)) # A - B
+print(set_var_b.difference(set_var_a)) # B - A
+print(set_var_a.union(set_var_b))
+print(set_var_a.intersection(set_var_b))
 
 ## frozenset --> immutable
 
@@ -80,7 +80,7 @@
 # print(tpl)
 
 
-## list (Array)
+# # list (Array)
 
 # lst = []
 # print("The lst is", lst)

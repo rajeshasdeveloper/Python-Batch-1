@@ -21,8 +21,8 @@ class Student:
         return f"Hi I am {self.name} and I am {self.age} with grade of {self.grade}"
 
 
-# aravindan = Student("Aravindan", 10, 80)
-# student_detail = aravindan.get_student_details()
+aravindan = Student("Aravindan", 10, 80)
+student_detail = aravindan.get_student_details()
 
 
 class Admission:
@@ -47,18 +47,18 @@ class Admission:
 
 
 
-# adm = Admission('Science', student_detail, 100)
-# print('Admission strength currently is', adm.course_strength)
-# print('Admission decission for Aravindan is', adm.admission_decission())
-# print('Admission Staus for Aravindan is', adm.admission_status())
-# print('Admission strength currently is', adm.course_strength)
-# print('\n\n')
+adm = Admission('Science', student_detail, 100)
+print('Admission strength currently is', adm.course_strength)
+print('Admission decission for Aravindan is', adm.admission_decission())
+print('Admission Staus for Aravindan is', adm.admission_status())
+print('Admission strength currently is', adm.course_strength)
+print('\n\n')
 
-# adm2 = Admission('Maths', Student('rajeshk', 15, 70).get_student_details(), 50)
-# print('Admission strength currently is', adm2.course_strength)
-# print(adm2.admission_decission())
-# print(adm2.admission_status())
-# print('Admission strength currently is', adm2.course_strength)
+adm2 = Admission('Maths', Student('rajeshk', 15, 70).get_student_details(), 50)
+print('Admission strength currently is', adm2.course_strength)
+print(adm2.admission_decission())
+print(adm2.admission_status())
+print('Admission strength currently is', adm2.course_strength)
 
 a = 'abc'
 def abc():
@@ -68,25 +68,25 @@ def abc():
     return a
 
 
-# Inheritence and Polymorphism
+# # Inheritence and Polymorphism
 
-class Bird:
+# class Bird:
 
-	def intro(self):
-		print("There are many types of birds.")
+# 	def intro(self):
+# 		print("There are many types of birds.")
 
-	def flight(self):
-		print("Most of the birds can fly but some cannot.")
+# 	def flight(self):
+# 		print("Most of the birds can fly but some cannot.")
 
-class sparrow(Bird):
+# class sparrow(Bird):
 
-	def flight(self):
-		print("Sparrows can fly.")
+# 	def flight(self):
+# 		print("Sparrows can fly.")
 
-class ostrich(Bird):
+# class ostrich(Bird):
 
-	def flight(self):
-		print("Ostriches cannot fly.")
+# 	def flight(self):
+# 		print("Ostriches cannot fly.")
 
 # obj_bird = Bird()
 # obj_spr = sparrow()
